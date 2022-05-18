@@ -30,6 +30,10 @@ from dada.domain_adaptation.train_UDA import train_domain_adaptation_with_depth
 warnings.filterwarnings("ignore", message="numpy.dtype size changed")
 warnings.filterwarnings("ignore")
 
+def init_func(worker_id):
+        #np.random.seed(cfg.TRAIN.RANDOM_SEED + worker_id) 
+        result = np.random.seed(cfg.TRAIN.RANDOM_SEED + worker_id)
+        return result
 
 def main():
     # LOAD ARGS
@@ -64,6 +68,7 @@ def main():
     pprint.pprint(cfg)
 
     # INIT
+    #global _init_fn
     _init_fn = None
     if not args.random_train:
         torch.manual_seed(cfg.TRAIN.RANDOM_SEED)
@@ -71,8 +76,18 @@ def main():
         np.random.seed(cfg.TRAIN.RANDOM_SEED)
         random.seed(cfg.TRAIN.RANDOM_SEED)
 
-        def _init_fn(worker_id):
-            np.random.seed(cfg.TRAIN.RANDOM_SEED + worker_id)
+        #def _init_fn(worker_id):
+        #    #np.random.seed(cfg.TRAIN.RANDOM_SEED + worker_id)
+        #    global result 
+        #    result = np.random.seed(cfg.TRAIN.RANDOM_SEED + worker_id)
+        #    return result
+
+        #def _init_fn(worker_id):
+        #    #np.random.seed(cfg.TRAIN.RANDOM_SEED + worker_id) 
+        #    result = np.random.seed(cfg.TRAIN.RANDOM_SEED + worker_id)
+        #    return result
+
+        _init_fn = init_func
 
     if os.environ.get("DADA_DRY_RUN", "0") == "1":
         return
