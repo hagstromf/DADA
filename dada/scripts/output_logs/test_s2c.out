@@ -1,0 +1,965 @@
+Called with args:
+Namespace(cfg='./configs_s2c/dada.yml', exp_suffix=None)
+Using config:
+{'DATA_DIRECTORY_SOURCE': '/scratch/work/hagstrf1/DADA/data/SYNTHIA',
+ 'DATA_DIRECTORY_TARGET': '/scratch/work/hagstrf1/DADA/data/Cityscapes',
+ 'DATA_LIST_SOURCE': '/scratch/work/hagstrf1/DADA/dada/dataset/synthia_list/{}.txt',
+ 'DATA_LIST_TARGET': '/scratch/work/hagstrf1/DADA/dada/dataset/cityscapes_list/{}.txt',
+ 'EXP_NAME': 'SYNTHIA2Cityscapes_DeepLabv2_DADA',
+ 'EXP_ROOT': PosixPath('/scratch/work/hagstrf1/DADA/experiments'),
+ 'EXP_ROOT_LOGS': '/scratch/work/hagstrf1/DADA/experiments/logs',
+ 'EXP_ROOT_SNAPSHOT': '/scratch/work/hagstrf1/DADA/experiments/snapshots',
+ 'GPU_ID': 0,
+ 'NUM_CLASSES': 16,
+ 'NUM_WORKERS': 4,
+ 'SOURCE': 'SYNTHIA',
+ 'TARGET': 'Cityscapes',
+ 'TEST': {'BATCH_SIZE_TARGET': 1,
+          'IMG_MEAN': array([104.00699, 116.66877, 122.67892], dtype=float32),
+          'INFO_TARGET': '/scratch/work/hagstrf1/DADA/dada/dataset/cityscapes_list/info16class.json',
+          'INPUT_SIZE_TARGET': [1024, 512],
+          'MODE': 'best',
+          'MODEL': ['DeepLabv2_depth'],
+          'MODEL_WEIGHT': [1.0],
+          'MULTI_LEVEL': [False],
+          'OUTPUT_SIZE_TARGET': [2048, 1024],
+          'RESTORE_FROM': [''],
+          'SET_TARGET': 'val',
+          'SNAPSHOT_DIR': ['/scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA'],
+          'SNAPSHOT_MAXITER': 90000,
+          'SNAPSHOT_STEP': 2000,
+          'WAIT_MODEL': True},
+ 'TRAIN': {'BATCH_SIZE_SOURCE': 1,
+           'BATCH_SIZE_TARGET': 1,
+           'DA_METHOD': 'DADA',
+           'EARLY_STOP': 90000,
+           'IGNORE_LABEL': 255,
+           'IMG_MEAN': array([104.00699, 116.66877, 122.67892], dtype=float32),
+           'INFO_SOURCE': '',
+           'INFO_TARGET': '/scratch/work/hagstrf1/DADA/dada/dataset/cityscapes_list/info16class.json',
+           'INPUT_SIZE_SOURCE': [1280, 760],
+           'INPUT_SIZE_TARGET': [1024, 512],
+           'LAMBDA_ADV_AUX': 0.0002,
+           'LAMBDA_ADV_MAIN': 0.001,
+           'LAMBDA_DEPTH_MAIN': 0.001,
+           'LAMBDA_ENT_AUX': 0.0002,
+           'LAMBDA_ENT_MAIN': 0.001,
+           'LAMBDA_SEG_AUX': 0.1,
+           'LAMBDA_SEG_MAIN': 1.0,
+           'LEARNING_RATE': 0.00025,
+           'LEARNING_RATE_D': 0.0001,
+           'MAX_ITERS': 90000,
+           'MODEL': 'DeepLabv2_depth',
+           'MOMENTUM': 0.9,
+           'MULTI_LEVEL': False,
+           'POWER': 0.9,
+           'RANDOM_SEED': 1234,
+           'RESTORE_FROM': '../../pretrained_models/DeepLab_resnet_pretrained_imagenet.pth',
+           'SAVE_PRED_EVERY': 2000,
+           'SET_SOURCE': 'all',
+           'SET_TARGET': 'train',
+           'SNAPSHOT_DIR': '',
+           'TENSORBOARD_LOGDIR': '',
+           'TENSORBOARD_VIZRATE': 100,
+           'WEIGHT_DECAY': 0.0005},
+ 'USE_DEPTH': True}
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_2000.pth
+	Current mIoU: 30.57
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_2000.pth
+	Current best mIoU: 30.57
+road	44.04
+sidewalk	26.21
+building	74.22
+wall	2.0
+fence	0.01
+pole	23.36
+light	0.06
+sign	8.79
+vegetation	72.66
+sky	75.21
+person	50.46
+rider	16.62
+car	28.19
+bus	22.07
+motocycle	12.93
+bicycle	32.23
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_4000.pth
+	Current mIoU: 33.79
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_4000.pth
+	Current best mIoU: 33.79
+road	48.23
+sidewalk	25.75
+building	78.33
+wall	3.26
+fence	0.31
+pole	25.67
+light	13.05
+sign	15.01
+vegetation	78.37
+sky	76.75
+person	52.64
+rider	21.28
+car	33.81
+bus	18.37
+motocycle	18.72
+bicycle	31.1
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_6000.pth
+	Current mIoU: 36.45
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_6000.pth
+	Current best mIoU: 36.45
+road	64.68
+sidewalk	25.74
+building	73.95
+wall	8.24
+fence	0.41
+pole	26.86
+light	14.56
+sign	14.15
+vegetation	75.95
+sky	77.44
+person	50.37
+rider	21.32
+car	56.01
+bus	22.09
+motocycle	22.12
+bicycle	29.26
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_8000.pth
+	Current mIoU: 37.22
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_8000.pth
+	Current best mIoU: 37.22
+road	61.21
+sidewalk	21.2
+building	77.56
+wall	7.84
+fence	0.14
+pole	27.64
+light	14.0
+sign	16.27
+vegetation	77.57
+sky	79.03
+person	48.6
+rider	20.04
+car	69.84
+bus	29.83
+motocycle	18.04
+bicycle	26.64
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_10000.pth
+	Current mIoU: 34.53
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_8000.pth
+	Current best mIoU: 37.22
+road	49.44
+sidewalk	20.77
+building	75.7
+wall	10.51
+fence	0.22
+pole	26.05
+light	13.11
+sign	13.99
+vegetation	75.88
+sky	80.01
+person	49.14
+rider	16.36
+car	52.34
+bus	24.4
+motocycle	15.33
+bicycle	29.21
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_12000.pth
+	Current mIoU: 36.78
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_8000.pth
+	Current best mIoU: 37.22
+road	53.43
+sidewalk	20.72
+building	76.67
+wall	10.15
+fence	0.46
+pole	27.79
+light	16.42
+sign	15.28
+vegetation	78.28
+sky	79.54
+person	51.08
+rider	20.71
+car	56.92
+bus	26.43
+motocycle	20.88
+bicycle	33.72
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_14000.pth
+	Current mIoU: 38.18
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_14000.pth
+	Current best mIoU: 38.18
+road	69.44
+sidewalk	27.21
+building	78.49
+wall	7.13
+fence	0.61
+pole	28.05
+light	15.87
+sign	16.17
+vegetation	79.56
+sky	77.05
+person	50.81
+rider	17.19
+car	66.21
+bus	29.17
+motocycle	17.44
+bicycle	30.43
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_16000.pth
+	Current mIoU: 37.98
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_14000.pth
+	Current best mIoU: 38.18
+road	67.12
+sidewalk	25.71
+building	77.51
+wall	11.44
+fence	0.31
+pole	27.71
+light	15.76
+sign	13.88
+vegetation	77.03
+sky	80.14
+person	49.87
+rider	15.27
+car	68.37
+bus	28.86
+motocycle	18.75
+bicycle	29.95
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_18000.pth
+	Current mIoU: 38.34
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_18000.pth
+	Current best mIoU: 38.34
+road	69.54
+sidewalk	28.09
+building	78.9
+wall	10.32
+fence	0.42
+pole	28.19
+light	13.62
+sign	13.09
+vegetation	78.96
+sky	81.33
+person	51.26
+rider	17.16
+car	62.85
+bus	32.02
+motocycle	18.61
+bicycle	29.14
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_20000.pth
+	Current mIoU: 39.08
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_20000.pth
+	Current best mIoU: 39.08
+road	66.35
+sidewalk	25.25
+building	78.7
+wall	15.06
+fence	0.69
+pole	28.94
+light	17.03
+sign	14.06
+vegetation	78.88
+sky	79.82
+person	50.8
+rider	17.19
+car	74.95
+bus	30.73
+motocycle	18.93
+bicycle	27.95
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_22000.pth
+	Current mIoU: 40.17
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_22000.pth
+	Current best mIoU: 40.17
+road	74.26
+sidewalk	30.33
+building	79.59
+wall	9.8
+fence	0.43
+pole	28.72
+light	16.34
+sign	14.45
+vegetation	78.98
+sky	81.65
+person	52.57
+rider	17.2
+car	74.33
+bus	29.66
+motocycle	19.65
+bicycle	34.81
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_24000.pth
+	Current mIoU: 39.15
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_22000.pth
+	Current best mIoU: 40.17
+road	69.38
+sidewalk	26.54
+building	78.15
+wall	12.14
+fence	0.32
+pole	27.73
+light	14.49
+sign	13.38
+vegetation	76.3
+sky	80.31
+person	52.82
+rider	15.23
+car	72.55
+bus	36.19
+motocycle	19.57
+bicycle	31.25
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_26000.pth
+	Current mIoU: 40.62
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_26000.pth
+	Current best mIoU: 40.62
+road	77.66
+sidewalk	30.09
+building	78.83
+wall	11.86
+fence	0.48
+pole	28.42
+light	14.99
+sign	14.58
+vegetation	78.42
+sky	81.79
+person	51.7
+rider	19.28
+car	78.04
+bus	27.4
+motocycle	19.8
+bicycle	36.64
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_28000.pth
+	Current mIoU: 37.95
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_26000.pth
+	Current best mIoU: 40.62
+road	68.05
+sidewalk	26.41
+building	77.62
+wall	11.28
+fence	0.3
+pole	26.27
+light	13.14
+sign	12.74
+vegetation	77.21
+sky	81.58
+person	51.11
+rider	13.55
+car	75.99
+bus	33.69
+motocycle	12.78
+bicycle	25.42
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_30000.pth
+	Current mIoU: 39.7
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_26000.pth
+	Current best mIoU: 40.62
+road	74.16
+sidewalk	29.41
+building	78.61
+wall	12.13
+fence	0.27
+pole	26.98
+light	14.22
+sign	13.36
+vegetation	77.35
+sky	81.9
+person	51.61
+rider	15.28
+car	78.04
+bus	34.44
+motocycle	16.47
+bicycle	30.98
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_32000.pth
+	Current mIoU: 39.75
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_26000.pth
+	Current best mIoU: 40.62
+road	78.64
+sidewalk	32.58
+building	78.65
+wall	10.26
+fence	0.31
+pole	28.22
+light	12.6
+sign	14.16
+vegetation	77.49
+sky	81.46
+person	52.81
+rider	16.08
+car	76.12
+bus	31.07
+motocycle	16.29
+bicycle	29.28
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_34000.pth
+	Current mIoU: 40.26
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_26000.pth
+	Current best mIoU: 40.62
+road	81.69
+sidewalk	34.71
+building	78.21
+wall	10.35
+fence	0.46
+pole	27.86
+light	12.52
+sign	13.96
+vegetation	76.18
+sky	81.44
+person	50.68
+rider	16.38
+car	80.2
+bus	35.05
+motocycle	18.55
+bicycle	25.91
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_36000.pth
+	Current mIoU: 40.2
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_26000.pth
+	Current best mIoU: 40.62
+road	79.83
+sidewalk	33.45
+building	78.4
+wall	10.46
+fence	0.36
+pole	28.82
+light	13.77
+sign	13.25
+vegetation	77.96
+sky	82.41
+person	52.13
+rider	17.25
+car	76.67
+bus	29.82
+motocycle	17.18
+bicycle	31.37
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_38000.pth
+	Current mIoU: 40.93
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_38000.pth
+	Current best mIoU: 40.93
+road	80.4
+sidewalk	33.79
+building	79.93
+wall	12.92
+fence	0.55
+pole	28.78
+light	12.88
+sign	15.47
+vegetation	80.02
+sky	81.54
+person	52.93
+rider	16.58
+car	77.18
+bus	34.48
+motocycle	18.23
+bicycle	29.2
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_40000.pth
+	Current mIoU: 40.73
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_38000.pth
+	Current best mIoU: 40.93
+road	82.86
+sidewalk	36.15
+building	79.25
+wall	9.33
+fence	0.35
+pole	28.56
+light	12.73
+sign	12.55
+vegetation	78.95
+sky	82.91
+person	51.79
+rider	13.77
+car	78.92
+bus	36.23
+motocycle	18.47
+bicycle	28.93
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current mIoU: 42.14
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	85.32
+sidewalk	38.46
+building	80.37
+wall	11.1
+fence	0.42
+pole	29.46
+light	11.78
+sign	13.35
+vegetation	80.48
+sky	82.14
+person	53.31
+rider	19.22
+car	80.2
+bus	33.28
+motocycle	18.3
+bicycle	36.99
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_44000.pth
+	Current mIoU: 41.72
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	83.64
+sidewalk	38.02
+building	80.24
+wall	8.81
+fence	0.63
+pole	29.44
+light	13.06
+sign	15.33
+vegetation	80.66
+sky	82.6
+person	51.36
+rider	16.66
+car	77.84
+bus	37.63
+motocycle	15.11
+bicycle	36.54
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_46000.pth
+	Current mIoU: 41.16
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	82.95
+sidewalk	37.89
+building	79.8
+wall	10.62
+fence	0.31
+pole	28.29
+light	12.94
+sign	12.17
+vegetation	80.2
+sky	82.13
+person	50.94
+rider	17.28
+car	79.62
+bus	34.12
+motocycle	16.69
+bicycle	32.66
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_48000.pth
+	Current mIoU: 40.0
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	83.91
+sidewalk	38.48
+building	79.09
+wall	9.63
+fence	0.32
+pole	28.29
+light	12.02
+sign	13.25
+vegetation	79.91
+sky	76.04
+person	51.92
+rider	15.05
+car	78.3
+bus	30.24
+motocycle	15.48
+bicycle	28.14
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_50000.pth
+	Current mIoU: 41.45
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	86.24
+sidewalk	40.23
+building	79.74
+wall	10.9
+fence	0.41
+pole	29.44
+light	11.0
+sign	12.89
+vegetation	79.04
+sky	82.5
+person	52.18
+rider	14.44
+car	81.85
+bus	33.21
+motocycle	17.3
+bicycle	31.78
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_52000.pth
+	Current mIoU: 41.08
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	85.03
+sidewalk	39.41
+building	80.01
+wall	9.32
+fence	0.4
+pole	28.76
+light	13.35
+sign	13.39
+vegetation	80.26
+sky	83.26
+person	50.5
+rider	14.74
+car	77.86
+bus	33.04
+motocycle	15.14
+bicycle	32.78
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_54000.pth
+	Current mIoU: 40.94
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	85.6
+sidewalk	38.73
+building	79.17
+wall	9.47
+fence	0.32
+pole	27.59
+light	11.82
+sign	12.4
+vegetation	79.22
+sky	82.68
+person	51.07
+rider	15.98
+car	79.16
+bus	32.52
+motocycle	15.34
+bicycle	33.98
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_56000.pth
+	Current mIoU: 41.86
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	86.39
+sidewalk	39.75
+building	79.19
+wall	10.54
+fence	0.38
+pole	27.72
+light	11.9
+sign	12.51
+vegetation	77.7
+sky	82.87
+person	53.72
+rider	17.91
+car	82.27
+bus	34.05
+motocycle	17.58
+bicycle	35.32
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_58000.pth
+	Current mIoU: 41.59
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	84.28
+sidewalk	39.02
+building	80.27
+wall	10.3
+fence	0.42
+pole	28.54
+light	11.84
+sign	12.68
+vegetation	80.68
+sky	82.02
+person	52.47
+rider	18.03
+car	79.06
+bus	35.3
+motocycle	16.43
+bicycle	34.18
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_60000.pth
+	Current mIoU: 41.71
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_42000.pth
+	Current best mIoU: 42.14
+road	85.93
+sidewalk	39.87
+building	79.43
+wall	11.43
+fence	0.51
+pole	28.2
+light	11.06
+sign	13.17
+vegetation	78.19
+sky	82.48
+person	53.05
+rider	17.55
+car	82.32
+bus	32.33
+motocycle	18.59
+bicycle	33.24
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_62000.pth
+	Current mIoU: 42.26
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_62000.pth
+	Current best mIoU: 42.26
+road	86.61
+sidewalk	41.27
+building	79.91
+wall	10.58
+fence	0.36
+pole	28.59
+light	10.02
+sign	11.62
+vegetation	79.78
+sky	83.42
+person	53.52
+rider	18.72
+car	81.63
+bus	34.06
+motocycle	18.2
+bicycle	37.82
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_64000.pth
+	Current mIoU: 42.32
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_64000.pth
+	Current best mIoU: 42.32
+road	86.9
+sidewalk	42.9
+building	80.63
+wall	8.75
+fence	0.7
+pole	29.6
+light	10.79
+sign	13.69
+vegetation	80.28
+sky	82.67
+person	53.02
+rider	17.65
+car	82.13
+bus	36.44
+motocycle	16.03
+bicycle	35.0
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_66000.pth
+	Current mIoU: 41.53
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_64000.pth
+	Current best mIoU: 42.32
+road	86.87
+sidewalk	41.73
+building	79.76
+wall	9.01
+fence	0.49
+pole	28.72
+light	11.58
+sign	13.7
+vegetation	79.86
+sky	81.9
+person	53.15
+rider	14.5
+car	81.44
+bus	35.35
+motocycle	15.41
+bicycle	30.96
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_68000.pth
+	Current mIoU: 41.07
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_64000.pth
+	Current best mIoU: 42.32
+road	83.66
+sidewalk	38.8
+building	79.31
+wall	10.02
+fence	0.51
+pole	28.52
+light	9.98
+sign	12.19
+vegetation	79.99
+sky	83.05
+person	50.97
+rider	15.07
+car	79.72
+bus	38.65
+motocycle	14.4
+bicycle	32.27
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_70000.pth
+	Current mIoU: 41.06
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_64000.pth
+	Current best mIoU: 42.32
+road	86.29
+sidewalk	41.09
+building	79.86
+wall	8.21
+fence	0.38
+pole	28.74
+light	11.12
+sign	12.07
+vegetation	80.52
+sky	82.72
+person	51.18
+rider	13.84
+car	79.91
+bus	34.99
+motocycle	15.89
+bicycle	30.11
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_72000.pth
+	Current mIoU: 42.4
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_72000.pth
+	Current best mIoU: 42.4
+road	87.46
+sidewalk	41.47
+building	80.6
+wall	10.28
+fence	0.32
+pole	29.46
+light	11.65
+sign	13.23
+vegetation	80.76
+sky	83.1
+person	51.38
+rider	16.3
+car	82.89
+bus	37.03
+motocycle	16.34
+bicycle	36.18
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_74000.pth
+	Current mIoU: 41.58
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_72000.pth
+	Current best mIoU: 42.4
+road	86.46
+sidewalk	40.63
+building	79.52
+wall	9.66
+fence	0.36
+pole	28.46
+light	9.42
+sign	11.48
+vegetation	79.65
+sky	82.69
+person	54.06
+rider	16.81
+car	80.22
+bus	32.89
+motocycle	17.69
+bicycle	35.35
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_76000.pth
+	Current mIoU: 41.0
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_72000.pth
+	Current best mIoU: 42.4
+road	84.32
+sidewalk	38.94
+building	79.46
+wall	9.07
+fence	0.29
+pole	28.09
+light	10.11
+sign	10.17
+vegetation	79.76
+sky	83.61
+person	52.16
+rider	15.03
+car	80.84
+bus	34.91
+motocycle	16.88
+bicycle	32.42
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_78000.pth
+	Current mIoU: 41.57
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_72000.pth
+	Current best mIoU: 42.4
+road	86.57
+sidewalk	40.59
+building	80.39
+wall	11.82
+fence	0.36
+pole	28.76
+light	9.9
+sign	10.81
+vegetation	80.84
+sky	82.69
+person	53.63
+rider	14.79
+car	80.47
+bus	33.66
+motocycle	17.28
+bicycle	32.47
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_80000.pth
+	Current mIoU: 41.3
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_72000.pth
+	Current best mIoU: 42.4
+road	85.0
+sidewalk	39.34
+building	80.13
+wall	10.72
+fence	0.24
+pole	28.74
+light	10.13
+sign	12.38
+vegetation	80.76
+sky	83.5
+person	52.33
+rider	13.96
+car	80.49
+bus	36.09
+motocycle	15.48
+bicycle	31.52
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_82000.pth
+	Current mIoU: 41.97
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_72000.pth
+	Current best mIoU: 42.4
+road	88.19
+sidewalk	41.88
+building	80.77
+wall	11.08
+fence	0.38
+pole	29.58
+light	11.63
+sign	12.27
+vegetation	81.34
+sky	83.21
+person	51.79
+rider	14.93
+car	81.69
+bus	34.86
+motocycle	14.8
+bicycle	33.07
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_84000.pth
+	Current mIoU: 42.47
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_84000.pth
+	Current best mIoU: 42.47
+road	87.1
+sidewalk	39.95
+building	80.21
+wall	12.04
+fence	0.42
+pole	28.92
+light	9.61
+sign	11.87
+vegetation	79.64
+sky	82.37
+person	54.65
+rider	19.71
+car	82.88
+bus	34.7
+motocycle	18.92
+bicycle	36.58
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_86000.pth
+	Current mIoU: 41.25
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_84000.pth
+	Current best mIoU: 42.47
+road	87.84
+sidewalk	41.25
+building	79.73
+wall	7.3
+fence	0.42
+pole	28.86
+light	10.25
+sign	11.58
+vegetation	79.64
+sky	82.16
+person	53.05
+rider	16.27
+car	80.36
+bus	31.57
+motocycle	16.51
+bicycle	33.28
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_88000.pth
+	Current mIoU: 42.54
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_88000.pth
+	Current best mIoU: 42.54
+road	87.39
+sidewalk	41.54
+building	80.46
+wall	9.97
+fence	0.3
+pole	28.92
+light	11.02
+sign	11.77
+vegetation	80.81
+sky	82.85
+person	54.54
+rider	18.88
+car	82.62
+bus	34.07
+motocycle	19.33
+bicycle	36.24
+Evaluating model /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_90000.pth
+	Current mIoU: 41.12
+	Current best model: /scratch/work/hagstrf1/DADA/experiments/snapshots/SYNTHIA2Cityscapes_DeepLabv2_DADA/model_88000.pth
+	Current best mIoU: 42.54
+road	87.12
+sidewalk	41.17
+building	79.58
+wall	9.39
+fence	0.3
+pole	28.43
+light	11.54
+sign	11.66
+vegetation	79.99
+sky	82.55
+person	52.68
+rider	15.34
+car	80.98
+bus	30.63
+motocycle	15.45
+bicycle	31.09

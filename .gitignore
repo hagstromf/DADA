@@ -108,3 +108,6 @@ data/
 pretrained_models/
 experiments/
 
+# Triton shell scripts
+test_s2c.sh
+train_s2c.sh
