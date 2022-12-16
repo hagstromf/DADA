@@ -108,5 +108,3 @@ data/
 pretrained_models/
 experiments/
 
-# Triton shell scripts
-*.sh
